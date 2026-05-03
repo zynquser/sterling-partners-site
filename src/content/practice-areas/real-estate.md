@@ -14,3 +14,4 @@ We close deals quickly, anticipate friction, and structure investments to weathe
 - Senior, mezzanine, and joint-venture financing
 - Commercial leasing — office, retail, industrial
 - Land use, zoning, and entitlement
+- Real estate dispute resolution
