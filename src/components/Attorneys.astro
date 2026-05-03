@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+
+const attorneys = (await getCollection("attorneys")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+<section id="attorneys" class="py-24 md:py-32 bg-navy-900 text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.06]"
+       style="background-image: radial-gradient(circle at 80% 20%, var(--color-gold-400) 0, transparent 40%);">
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16">
+      <div class="max-w-2xl">
+        <p class="text-gold-300 text-sm tracking-[0.25em] uppercase mb-4">Leadership</p>
+        <h2 class="text-4xl md:text-5xl font-serif leading-tight">
+          The partners on your matter <em class="text-gold-300 not-italic font-serif">are the ones</em> answering the phone.
+        </h2>
+        <span class="gold-divider"></span>
+      </div>
+      <a href="#contact" class="inline-flex items-center gap-2 text-gold-300 hover:text-white transition-colors border-b border-gold-400/50 hover:border-white pb-1 self-start">
+        Meet the full team
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {attorneys.map((a) => (
+        <article class="group relative bg-navy-800 border border-white/10 hover:border-gold-400 transition-colors">
+          <div class="aspect-[4/5] bg-gradient-to-br from-navy-700 to-navy-950 flex items-center justify-center relative">
+            <div class="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity"
+                 style="background-image: radial-gradient(circle at 50% 30%, var(--color-gold-400) 0, transparent 60%);">
+            </div>
+            <span class="relative font-serif text-7xl text-gold-300/90">{a.data.initials}</span>
+          </div>
+          <div class="p-6">
+            <h3 class="font-serif text-xl text-white mb-1">{a.data.name}</h3>
+            <div class="text-gold-300 text-sm mb-2">{a.data.title}</div>
+            <div class="text-white/60 text-xs tracking-wider uppercase">{a.data.practice}</div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

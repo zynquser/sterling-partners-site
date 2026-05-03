@@ -1,0 +1,43 @@
+---
+const links = [
+  { href: "#practice", label: "Practice Areas" },
+  { href: "#about", label: "About" },
+  { href: "#attorneys", label: "Attorneys" },
+  { href: "#testimonials", label: "Testimonials" },
+  { href: "#contact", label: "Contact" },
+];
+---
+<header class="absolute top-0 left-0 right-0 z-30">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-3 group">
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-sm border border-gold-400/70 text-gold-300 font-serif text-xl">S</span>
+      <span class="text-white font-serif text-xl tracking-wide">Sterling <span class="text-gold-300">&amp;</span> Partners</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-sm text-white/85">
+      {links.map((l) => (
+        <a href={l.href} class="hover:text-gold-300 transition-colors">{l.label}</a>
+      ))}
+    </nav>
+    <a href="#contact" class="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium border border-gold-400 text-gold-200 hover:bg-gold-400 hover:text-navy-900 transition-colors">
+      Schedule Consultation
+      <span aria-hidden="true">→</span>
+    </a>
+    <button id="mobile-toggle" aria-label="Open menu" class="lg:hidden text-white p-2">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden bg-navy-900/95 backdrop-blur border-t border-gold-400/20 px-6 py-4">
+    {links.map((l) => (
+      <a href={l.href} class="block py-2 text-white/90 hover:text-gold-300">{l.label}</a>
+    ))}
+    <a href="#contact" class="mt-3 inline-block px-4 py-2 border border-gold-400 text-gold-200">Schedule Consultation</a>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-toggle");
+  const menu = document.getElementById("mobile-menu");
+  btn?.addEventListener("click", () => menu?.classList.toggle("hidden"));
+</script>
