@@ -7,7 +7,7 @@ const links = [
   { href: "#contact", label: "Contact" },
 ];
 ---
-<header class="absolute top-0 left-0 right-0 z-30">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-30 transition-colors duration-300">
   <div class="max-w-7xl mx-auto px-6 lg:px-10 py-6 flex items-center justify-between">
     <a href="/" class="flex items-center gap-3 group">
       <img src="/logo-mark.png" alt="ALSA Law" width="48" height="48" class="w-10 h-10 object-contain" />
@@ -43,4 +43,17 @@ const links = [
   const btn = document.getElementById("mobile-toggle");
   const menu = document.getElementById("mobile-menu");
   btn?.addEventListener("click", () => menu?.classList.toggle("hidden"));
+
+  // Sticky background: transparent over hero, navy once scrolled
+  const header = document.getElementById("site-header");
+  function updateHeader() {
+    if (!header) return;
+    if (window.scrollY > 60) {
+      header.classList.add("bg-navy-900/95", "backdrop-blur-md", "shadow-md", "shadow-navy-950/40");
+    } else {
+      header.classList.remove("bg-navy-900/95", "backdrop-blur-md", "shadow-md", "shadow-navy-950/40");
+    }
+  }
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
 </script>

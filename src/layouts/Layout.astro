@@ -37,5 +37,33 @@ const {
     <Nav />
     <main><slot /></main>
     <Footer />
+
+    <!-- Persistent corner mark — always visible, scrolls to top on click -->
+    <a
+      href="#top"
+      aria-label="ALSA Law — back to top"
+      class="corner-mark fixed bottom-5 right-5 md:bottom-6 md:right-6 z-40 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-navy-900/80 backdrop-blur-md border border-gold-400/40 shadow-lg shadow-navy-950/40 hover:bg-navy-900 hover:border-gold-400 transition-colors group"
+    >
+      <img
+        src="/logo-mark.png"
+        alt=""
+        width="56"
+        height="56"
+        class="w-7 h-7 md:w-8 md:h-8 object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+      />
+    </a>
+
+    <style>
+      .corner-mark {
+        opacity: 0;
+        animation: cornerMarkIn 0.8s ease-out 2.6s forwards;
+      }
+      @keyframes cornerMarkIn {
+        to { opacity: 1; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .corner-mark { opacity: 1; animation: none; }
+      }
+    </style>
   </body>
 </html>
