@@ -7,7 +7,6 @@
     <div class="absolute inset-0 opacity-[0.07]"
          style="background-image: radial-gradient(circle at 25% 30%, var(--color-gold-300) 0, transparent 35%), radial-gradient(circle at 80% 70%, var(--color-gold-400) 0, transparent 30%);">
     </div>
-    <!-- subtle pattern -->
     <svg class="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -38,40 +37,48 @@
           Explore Practice Areas
         </a>
       </div>
-      <div class="hidden mt-12 grid grid-cols-3 gap-6 max-w-lg border-t border-white/10 pt-8">
-        <div>
-          <div class="font-serif text-3xl text-gold-300">40+</div>
-          <div class="text-xs uppercase tracking-wider text-white/60 mt-1">Years Senior Counsel</div>
-        </div>
-        <div class="hidden">
-          <div class="font-serif text-3xl text-gold-300">120+</div>
-          <div class="text-xs uppercase tracking-wider text-white/60 mt-1">Attorneys</div>
-        </div>
-        <div class="hidden">
-          <div class="font-serif text-3xl text-gold-300">$8B+</div>
-          <div class="text-xs uppercase tracking-wider text-white/60 mt-1">Transactions Counseled</div>
-        </div>
-      </div>
     </div>
 
+    <!-- ░░ Right panel: corporate glass-tower photo ░░ -->
     <div class="lg:col-span-5 hidden lg:block">
       <div class="relative">
-        <div class="absolute -top-6 -left-6 w-32 h-32 border-2 border-gold-400/40"></div>
-        <div class="absolute -bottom-6 -right-6 w-32 h-32 border-2 border-gold-400/40"></div>
-        <div class="relative aspect-[4/5] bg-gradient-to-b from-navy-700 to-navy-950 border border-gold-400/30 p-10 flex flex-col">
-          <div class="text-gold-300 text-xs tracking-[0.3em] uppercase mb-8">Our Standard</div>
-          <div class="flex-1 flex flex-col justify-between gap-6">
-            <div>
-              <div class="font-serif text-2xl text-gold-300 mb-2">Law</div>
-              <p class="text-sm text-white/75 leading-relaxed">Deep expertise across UAE and international frameworks.</p>
-            </div>
-            <div class="border-t border-white/10 pt-6">
-              <div class="font-serif text-2xl text-gold-300 mb-2">Leadership</div>
-              <p class="text-sm text-white/75 leading-relaxed">Partner-led decision support at the highest level.</p>
-            </div>
-            <div class="border-t border-white/10 pt-6">
-              <div class="font-serif text-2xl text-gold-300 mb-2">Longevity</div>
-              <p class="text-sm text-white/75 leading-relaxed">Solutions built for resilience and lasting value.</p>
+        <!-- corner accents -->
+        <div class="absolute -top-6 -left-6 w-32 h-32 border-2 border-gold-400/40 z-10 pointer-events-none"></div>
+        <div class="absolute -bottom-6 -right-6 w-32 h-32 border-2 border-gold-400/40 z-10 pointer-events-none"></div>
+
+        <div class="relative aspect-[4/5] overflow-hidden border border-gold-400/20">
+          <!-- Photo: looking up at glass corporate towers -->
+          <img
+            src="https://www.executivecentre.com/_next/image/?url=https%3A%2F%2Fassets.executivecentre.com%2Fassets%2FAbuDhabi-AlSilaTower-CityView_FeatureSurrounding.jpg&w=3840&q=75"
+            alt=""
+            aria-hidden="true"
+            class="w-full h-full object-cover scale-105"
+            loading="eager"
+          />
+          <!-- Light overlay — same treatment as Etihad Towers and London photos -->
+          <div class="absolute inset-0 bg-navy-950/45"></div>
+          <!-- Bottom fade for text legibility -->
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-transparent to-transparent"></div>
+          <!-- Thin gold diagonal accent line -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none">
+            <line x1="100%" y1="0" x2="0" y2="100%" stroke="rgba(185,145,109,0.25)" stroke-width="1"/>
+          </svg>
+          <!-- Bottom tagline -->
+          <div class="absolute bottom-0 left-0 right-0 p-8">
+            <p class="text-gold-400/70 text-[10px] tracking-[0.3em] uppercase mb-4">Our Standard</p>
+            <div class="space-y-2.5 border-t border-white/10 pt-4">
+              <div class="flex items-center gap-3">
+                <span class="w-5 h-px bg-gold-400/50 flex-shrink-0"></span>
+                <span class="font-serif text-white/90 text-base">Law</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-5 h-px bg-gold-400/50 flex-shrink-0"></span>
+                <span class="font-serif text-white/90 text-base">Leadership</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="w-5 h-px bg-gold-400/50 flex-shrink-0"></span>
+                <span class="font-serif text-white/90 text-base">Longevity</span>
+              </div>
             </div>
           </div>
         </div>
