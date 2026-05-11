@@ -1,7 +1,7 @@
 ---
 name: "Abdulla Aljefri"
 title: "Co-Founder and Managing Partner"
-practice: "Wealth Management & Structuring · Dispute Resolution · Government Affairs"
+practice: "Commercial Litigation · Wealth Management & Structuring · Dispute Resolution · Government Affairs"
 initials: "AA"
 order: 2
 image: "/attorneys/abdulla-aljefri.jpg"
